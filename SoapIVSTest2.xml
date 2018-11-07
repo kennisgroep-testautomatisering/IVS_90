@@ -857,14 +857,10 @@ logFile = ini.get("POCdata", "logfile")
 
 //def testcase = testRunner.getTestCase().getTestSuite().getTestCaseByName("GetCurrencyRate TestCase")
 //runner = testcase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false)
-testRunner.runTestStepByName("GetCurrencyRate")
+runner = testRunner.runTestStepByName("GetCurrencyRate")
 
-stap = context.testCase.getTestStepByName("GetCurrencyRate")
-resultaat = stap.getPropertyValue("response")
-Soap_exchange = slurper.parseText(resultaat)
-
-output_step = stap.getPropertyValue("Request")
-input_step = resultaat
+output_step = runner.getRequestContent()
+input_step = runner.getResponseContent()
 
 logFile = new File (logDir+logFile)
 
