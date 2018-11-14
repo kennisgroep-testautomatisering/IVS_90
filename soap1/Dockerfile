@@ -26,4 +26,6 @@ RUN ls -dl /usr/bin/SoapUI-5.4.0
 
 RUN chmod -R 777 /usr/bin/SoapUI-5.4.0
 
+RUN ls -dl /usr/bin/SoapUI-5.4.0
+
 ENTRYPOINT ["/usr/bin/SoapUI-5.4.0/bin/testrunner.sh", "SoapIVSTest1.xml"]
