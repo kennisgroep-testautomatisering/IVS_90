@@ -16,14 +16,10 @@ WORKDIR /var/dumps
 
 RUN wget "https://github.com/kennisgroep-testautomatisering/IVS_90/raw/master/ini4j-0.5.4.jar" -O /usr/bin/SoapUI-5.4.0/lib/ini4j-0.5.4.jar
 
-RUN pwd
-
 RUN ls /usr/bin/SoapUI-5.4.0/lib
 
 RUN wget "https://raw.githubusercontent.com/kennisgroep-testautomatisering/IVS_90/master/SoapIVSTest1.xml" -O /var/dumps/SoapIVSTest1.xml
 
-RUN pwd
-
-RUN ls /usr/dumps
+RUN ls /var/dumps
 
 ENTRYPOINT ["/usr/bin/SoapUI-5.4.0/bin/testrunner.sh", "SoapIVSTest1.xml"]
