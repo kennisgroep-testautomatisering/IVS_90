@@ -5,4 +5,3 @@ services:
     volumes:
       - ../ini:/var/ini
       - ../logs:/var/logs
-      - .:/var/dumps
