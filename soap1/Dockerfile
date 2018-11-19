@@ -18,6 +18,6 @@ RUN wget "https://github.com/kennisgroep-testautomatisering/IVS_90/raw/master/in
 
 RUN wget "https://raw.githubusercontent.com/kennisgroep-testautomatisering/IVS_90/master/SoapIVSTest1.xml" -O /var/dumps/SoapIVSTest1.xml
 
-RUN chmod 777 ../
+RUN chmod -R 777 ../
 
 ENTRYPOINT ["/usr/bin/SoapUI-5.4.0/bin/testrunner.sh", "SoapIVSTest1.xml"]
