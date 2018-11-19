@@ -24,4 +24,4 @@ RUN pwd
 
 RUN ls -l
 
-ENTRYPOINT ["/usr/bin/SoapUI-5.4.0/bin/testrunner.sh", "SoapIVSTest1.xml"]
+ENTRYPOINT ["/usr/bin/SoapUI-5.4.0/bin/testrunner.sh", "/var/dumps/SoapIVSTest1.xml"]
