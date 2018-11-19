@@ -10,6 +10,8 @@ RUN yum install -y java-1.8.0-openjdk-devel
 
 RUN wget -q "https://s3.amazonaws.com/downloads.eviware/soapuios/5.4.0/SoapUI-5.4.0-linux-bin.tar.gz"  -O /usr/bin/soapui.tgz && tar xvzf /usr/bin/soapui.tgz -C /usr/bin && rm -f /usr/bin/soapui.tgz
 
+RUN /usr/bin/SoapUI-5.4.0/bin/soapui.sh
+
 RUN mkdir /var/ini /var/logs
 
 WORKDIR /var/dumps
