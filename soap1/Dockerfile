@@ -20,4 +20,6 @@ RUN wget "https://raw.githubusercontent.com/kennisgroep-testautomatisering/IVS_9
 
 RUN chmod -R 777 ../
 
+RUN ls -l
+
 ENTRYPOINT ["/usr/bin/SoapUI-5.4.0/bin/testrunner.sh", "SoapIVSTest1.xml"]
