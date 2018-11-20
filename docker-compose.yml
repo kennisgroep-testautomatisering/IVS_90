@@ -3,6 +3,6 @@ services:
   ivs_regressie:
     build: .
     volumes:
-      - ../ini:/var/ini
-      - ../logs:/var/logs
-      - .:/var/dumps
+      - ../ini:/var/ini:z
+      - ../logs:/var/logs:z
+      - .:/var/dumps:z
