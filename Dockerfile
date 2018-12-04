@@ -20,7 +20,7 @@ RUN wget -q "https://chromedriver.storage.googleapis.com/2.44/chromedriver_linux
 
 RUN ls /usr/local/
 
-RUN tar xvzf /usr/local/chromedriver_linux64.zip -C /usr/local/
+RUN yum install -y unzip
 
 RUN unzip /usr/local/chromedriver_linux64.zip
 
