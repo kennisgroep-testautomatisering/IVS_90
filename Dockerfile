@@ -12,9 +12,9 @@ RUN wget -q "https://github.com/mozilla/geckodriver/releases/download/v0.19.1/ge
 
 RUN wget -q "https://ftp.mozilla.org/pub/firefox/releases/61.0/linux-x86_64/en-US/firefox-61.0.tar.bz2" -O /usr/local/ff.bz2 && tar xvjf /usr/local/ff.bz2 -C /usr/local/ && rm -f /usr/local/ff.bz2
 
-RUN wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm" -O /usr/local/google-chrome-stable_current_x86_64.rpm
+RUN wget -q "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm" -O /usr/bin/google-chrome-stable_current_x86_64.rpm
 
-RUN yum install -y /usr/local/google-chrome-stable_current_x86_64.rpm
+RUN yum install -y /usr/bin/google-chrome-stable_current_x86_64.rpm
 
 RUN wget -q "https://chromedriver.storage.googleapis.com/2.44/chromedriver_linux64.zip" -O /usr/local/chromedriver_linux64.zip
 
