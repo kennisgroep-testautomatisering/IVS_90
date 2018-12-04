@@ -28,6 +28,6 @@ RUN mkdir /var/ini /var/logs
 
 WORKDIR /var/dumps
 
-RUN wget -q "https://raw.githubusercontent.com/kennisgroep-testautomatisering/IVS_90/master/currencyConverterCR.py" -O /var/dumps/currencyConverter.py
+RUN wget -q "https://raw.githubusercontent.com/kennisgroep-testautomatisering/IVS_90/master/currencyConverterCR.py" -O /var/dumps/currencyConverterCR.py
 
 ENTRYPOINT ["python36", "/var/dumps/currencyConverterCR.py"]
