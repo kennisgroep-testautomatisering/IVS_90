@@ -30,4 +30,4 @@ WORKDIR /var/dumps
 
 RUN wget -q "https://raw.githubusercontent.com/kennisgroep-testautomatisering/IVS_90/master/currencyConverter.py" -O /var/dumps/currencyConverter.py
 
-ENTRYPOINT ["python36", "/var/dumps/currencyConverter.py"]
+ENTRYPOINT ["python36", "/var/dumps/currencyConverterCR.py"]
