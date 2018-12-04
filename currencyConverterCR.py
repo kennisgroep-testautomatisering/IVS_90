@@ -34,7 +34,7 @@ class CurrencyTest(unittest.TestCase):
 
         chromeOptions = webdriver.ChromeOptions()
         chromeOptions.add_argument("headless")
-        self.driver = webdriver.Chrome(executable_path="/usr/local/chromedriver.exe",options=chromeOptions)
+        self.driver = webdriver.Chrome(executable_path="/usr/local/chromedriver",options=chromeOptions)
         #self.driver = webdriver.Chrome(executable_path="C:/Selenium_Jar_MR/anders/chromedriver.exe",options=chromeOptions)
         
         logging.info("Setting Driver Settings")
