@@ -18,9 +18,13 @@ RUN yum install -y /usr/local/google-chrome-stable_current_x86_64.rpm
 
 RUN wget -q "https://chromedriver.storage.googleapis.com/2.44/chromedriver_linux64.zip" -O /usr/local/chromedriver_linux64.zip
 
+RUN ls /usr/local/
+
 RUN yum install -y zip unzip
 
 RUN unzip /usr/local/chromedriver_linux64.zip && rm -f /usr/local/chromedriver_linux64.zip
+
+RUN ls /usr/local/
 
 RUN pip3 install --upgrade pip && pip3 install selenium && pip3 install configparser && pip3 install untangle
 
