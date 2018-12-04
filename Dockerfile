@@ -22,7 +22,7 @@ RUN ls /usr/local/
 
 RUN yum install -y unzip
 
-RUN unzip /usr/local/chromedriver_linux64.zip
+RUN unzip /usr/local/chromedriver_linux64.zip -d /usr/local/
 
 RUN ls /usr/local/
 
