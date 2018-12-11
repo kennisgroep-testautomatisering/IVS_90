@@ -902,7 +902,7 @@ else {
 	testRunner.fail()
 }
 
-testRunner.fail() //Dit is een test om te zien hoe docker reageerd op falende testen
+//testRunner.fail() //Dit is een test om te zien hoe docker reageerd op falende testen
 testRunner.cancel("Test2 is klaar")]]></script></con:config></con:testStep><con:testStep type="request" id="b53a189f-8990-46f3-a2c6-5de7e3ef7eea" name="GetCurrencyRate"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ConverterSoap</con:interface><con:operation>GetCurrencyRate</con:operation><con:request name="GetCurrencyRate" id="35431189-8cf1-4111-abcb-edea9e428a99"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://currencyconverter.kowabunga.net/converter.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -912,4 +912,9 @@ testRunner.cancel("Test2 is klaar")]]></script></con:config></con:testStep><con:
          <tem:RateDate>${#TestSuite#date}</tem:RateDate>\r
       </tem:GetCurrencyRate>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tempuri.org/GetCurrencyRate" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>date</con:name><con:value>2018-11-01</con:value></con:property><con:property><con:name>currency</con:name><con:value>AUD</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://tempuri.org/GetCurrencyRate" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="13f1b9f1-df21-4eae-b1db-29c3163720bc"><con:settings/><con:config><script>import com.eviware.soapui.support.GroovyUtils
+
+encoded = 'RWNodGUgTWFubmVuIFNwZWxlbiBET09N'
+byte [] decoded  = encoded.decodeBase64()
+decoded_s = new String(decoded)
+log.info decoded_s</script></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>date</con:name><con:value>2018-11-01</con:value></con:property><con:property><con:name>currency</con:name><con:value>AUD</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
