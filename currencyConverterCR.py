@@ -35,7 +35,7 @@ class CurrencyTest(unittest.TestCase):
         chromeOptions = webdriver.ChromeOptions()
         chromeOptions.add_argument("headless")
         #chromeOptions.binary_location("/usr/local/bin/chromedriver") 
-        self.driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver",options=chromeOptions)
+        self.driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=chromeOptions)
         #executable_path="/usr/local/bin/chromedriver",
         #self.driver = webdriver.Chrome(executable_path="C:/Selenium_Jar_MR/anders/chromedriver.exe",options=chromeOptions)
         
