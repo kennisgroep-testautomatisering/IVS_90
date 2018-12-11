@@ -19,25 +19,18 @@ class CurrencyTest(unittest.TestCase):
     def setUp(self):
         self.config = configparser.ConfigParser()
         self.config.read("/var/ini/data.ini")
-        #self.config.read("C:\IVS_Next_KTV\ini\data.ini")
         data = self.config['POCdata']
 
         logging.basicConfig(level=logging.INFO, filename = '/var/logs/'+ data['LogFile'] )
-        #logging.basicConfig(level=logging.INFO, filename = 'C:/IVS_Next_KTV/logs/'+ data['LogFile'] )
 
         logging.info("Setting up Driver")
         WAIT = 30
         
-        #os.environ['MOZ_HEADLESS'] = '1'
-        #binary = FirefoxBinary('/usr/local/firefox/firefox')
-        #self.driver = webdriver.Firefox(firefox_binary=binary)
 
         chromeOptions = webdriver.ChromeOptions()
         chromeOptions.add_argument("headless")
-        #chromeOptions.binary_location("/usr/local/bin/chromedriver") 
+
         self.driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=chromeOptions)
-        #executable_path="/usr/local/bin/chromedriver",
-        #self.driver = webdriver.Chrome(executable_path="C:/Selenium_Jar_MR/anders/chromedriver.exe",options=chromeOptions)
         
         logging.info("Setting Driver Settings")
         self.driver.implicitly_wait(WAIT)
@@ -60,7 +53,6 @@ class CurrencyTest(unittest.TestCase):
         logging.info("Enter Data")
         elem = wait.until(EC.presence_of_element_located( (By.XPATH, '//*[@id="content"]/span/form/table/tbody/tr[2]/td[2]/input') ) )
         elem.send_keys(data['currency'], Keys.TAB, data['date'])
-        #datetime uitzoeken in Python
         format = "%Y%m%d%H%M%S%f"
         date = datetime.datetime.now()
         driver.get_screenshot_as_file('screenshots/screenshotHomePage'+date.strftime(format)+'.png')
@@ -79,7 +71,7 @@ class CurrencyTest(unittest.TestCase):
         print(result.decimal.cdata)
         
         cfgfile = open("/var/ini/data.ini", "w")
-        #cfgfile = open("C:\IVS_Next_KTV\ini\data.ini", "w")
+
         self.config.set('example','exchange', result.decimal.cdata)
         self.config.write(cfgfile)
         cfgfile.close()
