@@ -29,8 +29,10 @@ class CurrencyTest(unittest.TestCase):
 
         chromeOptions = webdriver.ChromeOptions()
         chromeOptions.add_argument("headless")
-
-        self.driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=chromeOptions)
+        chromeOptions.add_argument('--no-sandbox')
+        chromeOptions.add_argument('--disable-dev-shm-usage')
+        
+        self.driver = webdriver.Chrome("/usr/local/bin/chromedriver",options=chromeOptions)
         
         logging.info("Setting Driver Settings")
         self.driver.implicitly_wait(WAIT)
