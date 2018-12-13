@@ -5,12 +5,12 @@ import sys
 import logging
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 import configparser
 import untangle
@@ -27,12 +27,13 @@ class CurrencyTest(unittest.TestCase):
         WAIT = 30
         
 
-        chromeOptions = webdriver.ChromeOptions()
-        chromeOptions.add_argument("headless")
+        #chromeOptions = webdriver.ChromeOptions()
+        chromeOptions = Options()
+        chromeOptions.add_argument("--headless")
         chromeOptions.add_argument('--no-sandbox')
         chromeOptions.add_argument('--disable-dev-shm-usage')
         
-        self.driver = webdriver.Chrome("/usr/local/bin/chromedriver",options=chromeOptions)
+        self.driver = webdriver.Chrome(r"/usr/local/bin/chromedriver",chrome_options=chromeOptions)
         
         logging.info("Setting Driver Settings")
         self.driver.implicitly_wait(WAIT)
