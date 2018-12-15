@@ -68,7 +68,9 @@ class CurrencyTest(unittest.TestCase):
         date = datetime.datetime.now()
         driver.get_screenshot_as_file('screenshots/screenshotHomePage'+date.strftime(format)+'.png')
         source = driver.page_source
+        logging.info(source)
         result = untangle.parse(source)
+        logging.info(result)
 
         logging.info("Result: " + result.decimal.cdata)
         print(result.decimal.cdata)
